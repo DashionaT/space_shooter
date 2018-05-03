@@ -238,7 +238,7 @@ while not done:
             if event.key == pygame.K_SPACE:
                 ship.shoot()
 
-    pressed = pygame.key.get_pressed()
+        pressed = pygame.key.get_pressed()
 
     if pressed[pygame.K_LEFT]:
         ship.move_left()
