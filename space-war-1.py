@@ -61,9 +61,16 @@ class Ship(pygame.sprite.Sprite):
 
     def move_left(self):
         self.rect.x -= self.speed
+
+        if self.rect.left < 0:
+            self.rect.left = 0
+            
         
     def move_right(self):
         self.rect.x += self.speed
+
+        if self.rect.right > WIDTH:
+            self.rect.right = WIDTH
 
     def shoot(self):
         laser = Laser(laser_img)
@@ -124,7 +131,7 @@ class Mob(pygame.sprite.Sprite):
 
         if len(hit_list) > 0:
             EXPLOSION.play()
-            player.score += 1
+            player.score += 100
             self.kill()
 
 
@@ -220,7 +227,10 @@ stage = START
 # Game helper functions
 def show_title_screen():
     title_text = FONT_XL.render("Space War", 1, WHITE)
-    screen.blit(title_text, [50, 300])
+    t_rect = title_text.get_rect()
+    t_rect.centerx = WIDTH /2
+    t_rect.bottom = HEIGHT / 2
+    screen.blit(title_text, t_rect)
 
 def show_stats(player):
     score_text = FONT_MD.render(str(player.score), 1, WHITE)
