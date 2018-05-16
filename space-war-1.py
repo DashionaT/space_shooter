@@ -40,6 +40,8 @@ bomb_img = pygame.image.load('images/laserRed07.png')
 
 # Sounds
 EXPLOSION = pygame.mixer.Sound('sounds/explosion.ogg')
+pygame.mixer.music.load("sounds/upbeat.ogg")
+pygame.mixer.music.play(-1)
 
 # Stages
 START = 0
