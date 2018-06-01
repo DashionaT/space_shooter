@@ -1,5 +1,3 @@
-# Space War
-
 ## Objective
 In Space War you are a space ship defeating the evil aliens of space. 
 
